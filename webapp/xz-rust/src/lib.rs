@@ -114,12 +114,14 @@ fn read_header_table(data: &mut VecDeque<&u8>) -> Vec<(String, u8)> {
     return table;
 }
 
-fn read_header_subtables(data: &mut VecDeque<&u8>, table: &Vec<(String, u8)>, tables: &mut HashMap<String, Vec<(String, u8)>>) {
+fn read_header_subtables(data: &mut VecDeque<&u8>, table: &Vec<(String, u8)>, tables: &mut HashMap<String, Vec<(String, u8)>>, prefix: String) {
     for (field_name, field_type) in table {
         if *field_type == 0x10 | 11 {
+            let key = format!("{}{}", prefix, field_name);
+
             let table = read_header_table(data);
-            read_header_subtables(data, &table, tables);
-            tables.insert(field_name.clone(), table);
+            read_header_subtables(data, &table, tables, key.clone());
+            tables.insert(key, table);
         }
     }
 }
@@ -128,20 +130,20 @@ fn read_header(data: &mut VecDeque<&u8>) -> HashMap<String, Vec<(String, u8)>> {
     let mut tables: HashMap<String, Vec<(String, u8)>> = HashMap::new();
 
     let table = read_header_table(data);
-    read_header_subtables(data, &table, &mut tables);
+    read_header_subtables(data, &table, &mut tables, "root".to_string());
     tables.insert("root".to_string(), table);
 
     return tables;
 }
 
-fn read_field(data: &mut VecDeque<&u8>, tables: &HashMap<String, Vec<(String, u8)>>, field_name: &String, field_type: u8) -> Value {
+fn read_field(data: &mut VecDeque<&u8>, tables: &HashMap<String, Vec<(String, u8)>>, field_name: &String, field_type: u8, prefix: String) -> Value {
     if field_type & 0x10 != 0 && field_type != (0x10 | 10) {
         let length = read_gamma(data);
 
         let mut record: Vec<Value> = Vec::new();
 
         for _ in 0..length {
-            record.push(read_field(data, tables, field_name, field_type & 0xf));
+            record.push(read_field(data, tables, field_name, field_type & 0xf, prefix.clone()));
         }
         return Value::List(record);
     }
@@ -157,23 +159,23 @@ fn read_field(data: &mut VecDeque<&u8>, tables: &HashMap<String, Vec<(String, u8
         8 => Value::U64(read_uint64(data)),
         9 => Value::U16(read_uint16(data)),
         10 => { let length = read_gamma(data); return Value::String(read_string(data, length)); },
-        11 => read_record(data, tables, field_name),
+        11 => read_record(data, tables, format!("{}{}", prefix, field_name)),
         _ => { console_log!("Unknown field type {}", field_type); panic!("Unknown field type"); },
     }
 }
 
-fn read_record(data: &mut VecDeque<&u8>, tables: &HashMap<String, Vec<(String, u8)>>, key: &String) -> Value {
+fn read_record(data: &mut VecDeque<&u8>, tables: &HashMap<String, Vec<(String, u8)>>, key: String) -> Value {
     let mut record: HashMap<String, Value> = HashMap::new();
 
-    for (field_name, field_type) in &tables[key] {
-        record.insert(field_name.clone(), read_field(data, tables, field_name, *field_type));
+    for (field_name, field_type) in &tables[&key] {
+        record.insert(field_name.clone(), read_field(data, tables, field_name, *field_type, key.clone()));
     }
 
     return Value::Struct(record);
 }
 
 fn read_root_record(data: &mut VecDeque<&u8>, tables: &HashMap<String, Vec<(String, u8)>>) -> Value {
-    return read_record(data, tables, &"root".to_string());
+    return read_record(data, tables, "root".to_string());
 }
 
 #[wasm_bindgen]

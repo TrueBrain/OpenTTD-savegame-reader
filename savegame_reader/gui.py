@@ -83,7 +83,7 @@ class SavegameBrowser:
 
             if field[0] == FieldType.STRUCT:
                 for i, item in enumerate(svalue):
-                    self.add_table(tables, item, field[2], f"{prefix}{field[2]}[{i}].")
+                    self.add_table(tables, item, f"{table_key}.{field[2]}", f"{prefix}{field[2]}[{i}].")
 
     def IndexFocus(self):
         self.fields.clear()

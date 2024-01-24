@@ -49,10 +49,12 @@ class Savegame(PassthroughReader):
 
         for field in tables[key]:
             if field[0] == FieldType.STRUCT:
-                tables[field[2]], sub_size = self._read_table(reader)
+                table_key = f"{key}.{field[2]}"
+
+                tables[table_key], sub_size = self._read_table(reader)
                 size += sub_size
                 # Check if this table contains any other tables.
-                size += self._read_substruct(reader, tables, field[2])
+                size += self._read_substruct(reader, tables, table_key)
 
         return size
 
@@ -136,23 +138,23 @@ class Savegame(PassthroughReader):
         result = {}
 
         for field in tables[key]:
-            res, data = self.read_field(data, tables, field[0], field[1], field[2])
+            res, data = self.read_field(data, tables, field[0], field[1], field[2], key)
             result[field[2]] = res
 
         return result, data
 
-    def read_field(self, data, tables, field, is_list, field_name):
+    def read_field(self, data, tables, field, is_list, field_name, key):
         if is_list and field != FieldType.STRING:
             length, data = self.read_gamma(data)
 
             res = []
             for _ in range(length):
-                item, data = self.read_field(data, tables, field, False, field_name)
+                item, data = self.read_field(data, tables, field, False, field_name, key)
                 res.append(item)
             return res, data
 
         if field == FieldType.STRUCT:
-            return self._read_item(data, tables, field_name)
+            return self._read_item(data, tables, f"{key}.{field_name}")
 
         return self.READERS[field](self, data)
 
