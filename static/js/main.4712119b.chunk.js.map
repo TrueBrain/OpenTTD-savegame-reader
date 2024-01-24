@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.tsx"],"names":["async","loadNative"],"mappings":"wFAAA,OAAAA,uBACQ,wDACA,wDACR,CAEAC,E","file":"static/js/main.4712119b.chunk.js","sourcesContent":["async function loadNative() {\n  await import('xz');\n  await import('./App');\n}\n\nloadNative();\n\nexport {}\n"],"sourceRoot":""}

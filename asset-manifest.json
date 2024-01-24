@@ -1,25 +1,25 @@
 {
   "files": {
-    "static/js/0.43b8a681.chunk.js": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/0.43b8a681.chunk.js",
-    "c2d2d22876873337d7aa.module.wasm": "https://truebrain.github.io/OpenTTD-savegame-reader/c2d2d22876873337d7aa.module.wasm",
-    "static/js/0.43b8a681.chunk.js.map": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/0.43b8a681.chunk.js.map",
-    "main.js": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/main.01f4d44b.chunk.js",
-    "main.js.map": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/main.01f4d44b.chunk.js.map",
-    "runtime-main.js": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/runtime-main.bbe8f910.js",
-    "runtime-main.js.map": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/runtime-main.bbe8f910.js.map",
-    "static/css/3.4c97ca4f.chunk.css": "https://truebrain.github.io/OpenTTD-savegame-reader/static/css/3.4c97ca4f.chunk.css",
-    "static/js/3.0820caad.chunk.js": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/3.0820caad.chunk.js",
-    "static/js/3.0820caad.chunk.js.map": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/3.0820caad.chunk.js.map",
-    "static/js/4.e1d277f9.chunk.js": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/4.e1d277f9.chunk.js",
-    "static/js/4.e1d277f9.chunk.js.map": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/4.e1d277f9.chunk.js.map",
-    "static/js/5.baf6a2d5.chunk.js": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/5.baf6a2d5.chunk.js",
-    "static/js/5.baf6a2d5.chunk.js.map": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/5.baf6a2d5.chunk.js.map",
+    "static/js/0.242b4748.chunk.js": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/0.242b4748.chunk.js",
+    "bea2336607bdcec3a115.module.wasm": "https://truebrain.github.io/OpenTTD-savegame-reader/bea2336607bdcec3a115.module.wasm",
+    "static/js/0.242b4748.chunk.js.map": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/0.242b4748.chunk.js.map",
+    "main.js": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/main.4712119b.chunk.js",
+    "main.js.map": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/main.4712119b.chunk.js.map",
+    "runtime-main.js": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/runtime-main.2c8f3beb.js",
+    "runtime-main.js.map": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/runtime-main.2c8f3beb.js.map",
+    "static/css/3.44d809a4.chunk.css": "https://truebrain.github.io/OpenTTD-savegame-reader/static/css/3.44d809a4.chunk.css",
+    "static/js/3.042c5c03.chunk.js": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/3.042c5c03.chunk.js",
+    "static/js/3.042c5c03.chunk.js.map": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/3.042c5c03.chunk.js.map",
+    "static/js/4.7fcd8503.chunk.js": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/4.7fcd8503.chunk.js",
+    "static/js/4.7fcd8503.chunk.js.map": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/4.7fcd8503.chunk.js.map",
+    "static/js/5.974ec848.chunk.js": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/5.974ec848.chunk.js",
+    "static/js/5.974ec848.chunk.js.map": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/5.974ec848.chunk.js.map",
     "index.html": "https://truebrain.github.io/OpenTTD-savegame-reader/index.html",
-    "static/css/3.4c97ca4f.chunk.css.map": "https://truebrain.github.io/OpenTTD-savegame-reader/static/css/3.4c97ca4f.chunk.css.map",
-    "static/js/3.0820caad.chunk.js.LICENSE.txt": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/3.0820caad.chunk.js.LICENSE.txt"
+    "static/css/3.44d809a4.chunk.css.map": "https://truebrain.github.io/OpenTTD-savegame-reader/static/css/3.44d809a4.chunk.css.map",
+    "static/js/3.042c5c03.chunk.js.LICENSE.txt": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/3.042c5c03.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.bbe8f910.js",
-    "static/js/main.01f4d44b.chunk.js"
+    "static/js/runtime-main.2c8f3beb.js",
+    "static/js/main.4712119b.chunk.js"
   ]
 }
