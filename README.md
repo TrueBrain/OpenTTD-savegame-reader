@@ -38,7 +38,7 @@ Have latest rust installed, and install `wasm-pack` (with `cargo install wasm-pa
 
 ```bash
 cd webapp/xz-rust
-wasm-pack build
+wasm-pack build --release
 ```
 
 ### Installation (Web)
@@ -48,7 +48,9 @@ wasm-pack build
 ```bash
 cd webapp/web
 npm install
-npm run build
+NODE_OPTIONS=--openssl-legacy-provider npm run build
 ```
 
-Alternatively for the last step, you can do `npm start` for development.
+Alternatively for the last step, you can do `NODE_OPTIONS=--openssl-legacy-provider npm run start` for development.
+
+(the `NODE_OPTIONS=--openssl-legacy-provider` is needed as this project isn't upgraded to React 18 yet).

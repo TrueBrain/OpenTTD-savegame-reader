@@ -12,19 +12,19 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Install xz-rust
       run: |
         cd webapp/xz-rust
         cargo install wasm-pack
-        wasm-pack build
+        wasm-pack build --release
 
     - name: Install & build webapp
       run: |
         cd webapp/web
         npm install
-        PUBLIC_URL="https://truebrain.github.io/OpenTTD-savegame-reader/" npm run build
+        NODE_OPTIONS=--openssl-legacy-provider PUBLIC_URL="https://truebrain.github.io/OpenTTD-savegame-reader/" npm run build
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v4

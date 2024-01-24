@@ -278,7 +278,7 @@ pub fn decompress(incoming: &Uint8Array) -> String {
     return serde_json::to_string(&savegame).unwrap();
 }
 
-pub fn set_panic_hook() {
-    #[cfg(feature = "console_error_panic_hook")]
-    console_error_panic_hook::set_once();
+#[wasm_bindgen]
+pub fn init() {
+    std::panic::set_hook(Box::new(console_error_panic_hook::hook));
 }

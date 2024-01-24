@@ -1,4 +1,3 @@
-import React from 'react'
 import JSONTree from 'react-json-tree'
 
 function Viewer(props: any) {

@@ -1,11 +1,11 @@
-import React, { useCallback, useState } from 'react'
+import { useCallback, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
-import {decompress} from 'xz'
+import { decompress } from 'xz'
 
 function Savegame(props: any) {
   const [isAnalyzing, setIsAnalyzing] = useState(false)
 
-  const onDrop = useCallback((acceptedFiles) => {
+  const onDrop = useCallback((acceptedFiles: any) => {
     acceptedFiles.forEach((file: File) => {
       const reader = new FileReader()
 
