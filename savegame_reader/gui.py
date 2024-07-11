@@ -53,9 +53,12 @@ class SavegameBrowser:
         chunk = self.chunks[self.chunks.focus].original_widget.label
 
         if self._savegame.items[chunk]:
+            entries = []
             for key in self._savegame.items[chunk].keys():
                 button = urwid.Button(str(key))
-                self.indexes.append(urwid.AttrMap(button, None, focus_map="reversed"))
+                entries.append(urwid.AttrMap(button, None, focus_map="reversed"))
+            self.indexes.extend(entries)
+            self.indexes.set_focus(0)
 
     def add_table(self, tables, fields, table_key="root", prefix=""):
         table = tables[table_key]
