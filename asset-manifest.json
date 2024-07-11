@@ -1,12 +1,12 @@
 {
   "files": {
-    "static/js/0.242b4748.chunk.js": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/0.242b4748.chunk.js",
-    "bea2336607bdcec3a115.module.wasm": "https://truebrain.github.io/OpenTTD-savegame-reader/bea2336607bdcec3a115.module.wasm",
-    "static/js/0.242b4748.chunk.js.map": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/0.242b4748.chunk.js.map",
+    "static/js/0.a7aa7335.chunk.js": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/0.a7aa7335.chunk.js",
+    "aea09e4353d0379a349e.module.wasm": "https://truebrain.github.io/OpenTTD-savegame-reader/aea09e4353d0379a349e.module.wasm",
+    "static/js/0.a7aa7335.chunk.js.map": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/0.a7aa7335.chunk.js.map",
     "main.js": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/main.4712119b.chunk.js",
     "main.js.map": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/main.4712119b.chunk.js.map",
-    "runtime-main.js": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/runtime-main.2c8f3beb.js",
-    "runtime-main.js.map": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/runtime-main.2c8f3beb.js.map",
+    "runtime-main.js": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/runtime-main.98afd80b.js",
+    "runtime-main.js.map": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/runtime-main.98afd80b.js.map",
     "static/css/3.44d809a4.chunk.css": "https://truebrain.github.io/OpenTTD-savegame-reader/static/css/3.44d809a4.chunk.css",
     "static/js/3.042c5c03.chunk.js": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/3.042c5c03.chunk.js",
     "static/js/3.042c5c03.chunk.js.map": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/3.042c5c03.chunk.js.map",
@@ -19,7 +19,7 @@
     "static/js/3.042c5c03.chunk.js.LICENSE.txt": "https://truebrain.github.io/OpenTTD-savegame-reader/static/js/3.042c5c03.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2c8f3beb.js",
+    "static/js/runtime-main.98afd80b.js",
     "static/js/main.4712119b.chunk.js"
   ]
 }
